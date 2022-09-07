@@ -9,7 +9,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ route('categories.index') }}">Categories</a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('categories.index') }}">Categories</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('accounts.index') }}">Accounts</a>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
         </div>

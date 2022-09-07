@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-use App\Models\Category;
-use App\Models\ChargeEntrie;
+use App\Http\Controllers\AccountController;
+
 use App\Models\Transaction;
-use PHPUnit\TextUI\XmlConfiguration\Group;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +36,6 @@ Route::get('dashboard', function () {
 
 
 Route::resource('categories', CategoryController::class)->except('show');
+Route::resource('accounts', AccountController::class)->except('show');
 
 require __DIR__.'/auth.php';

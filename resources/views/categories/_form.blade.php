@@ -6,7 +6,7 @@
 
 <label class="uppercase text-gray-700 text-xs ">description</label>
 <span class="text-xs text-red-600">@error('description'){{$message}}@enderror</span>
-<textarea type="text" name="description" class="rounded border-gray-200 w-full mb-4">"{{old('description', $category->description)}}"</textarea>
+<textarea type="text" name="description" class="rounded border-gray-200 w-full mb-4">{{old('description', $category->description)}}</textarea>
 
 <div class="flex justify-between item-center">
     <a href="{{ route('categories.index') }}" class="text-indigo-600">Return</a>

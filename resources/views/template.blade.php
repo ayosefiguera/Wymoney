@@ -14,8 +14,7 @@
     </header>
     
 <ul>
-    <li><a href="/balance">Balance</a></li>
-    <li><a href="/categories">Categories</a></li>
+    <li><a href="{{ route('dashboard')}}">dashboard</a></li>
 </ul>
 
 @yield('content')
