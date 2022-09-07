@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ChargeEntrie>
  */
-class ChargeEntrieFactory extends Factory
+class TransactionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,8 @@ class ChargeEntrieFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'description' => fake()->text(),
+            'amount' => random_int(0,6000),
         ];
     }
 }
