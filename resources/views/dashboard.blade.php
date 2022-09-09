@@ -16,6 +16,9 @@
                         <li>
                             <a href="{{ route('accounts.index') }}">Accounts</a>
                         </li>
+                        <li>
+                            <a href="{{ route('transactions.index') }}">Transactions</a>
+                        </li>
 
                     </ul>
                 </div>

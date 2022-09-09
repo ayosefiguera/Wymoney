@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->text('description');
-            $table->integer('amount');
+            $table->double('amount');
             $table->timestamps();
         });
     }

@@ -35,7 +35,7 @@ class AccountController extends Controller
             'iban' => 'required|unique:accounts,iban'
         ]);
         
-        $account = Account::create([
+        Account::create([
             'name' => $request->name,
             'iban' => $request->iban,
             'is_active' => true

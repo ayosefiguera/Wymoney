@@ -2,6 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{__('Account')}}
+            <a class="bg-green-500 text-gray-200 rounded px-1 py-1" href="{{ route('accounts.create') }}">+ New Account</a>
         </h2>
     </x-slot>
 
@@ -36,6 +37,5 @@
         </div>
         
     </div>
-    <a class="bg-green-500 text-gray-200 rounded px-1 py-1" href="{{ route('accounts.create') }}"> New Account</a>
 
 </x-app-layout>

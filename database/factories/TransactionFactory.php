@@ -18,7 +18,7 @@ class TransactionFactory extends Factory
     {
         return [
             'description' => fake()->text(),
-            'amount' => random_int(0,6000),
+            'amount' => random_int(-6000,6000),
         ];
     }
 }

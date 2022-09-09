@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AccountController;
-
-use App\Models\Transaction;
-
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +23,6 @@ Route::get('/', function(){
 });
 
 
-Route::get('balance', function(){
-    $transactions = Transaction::orderBy('created_at', 'desc')->get();
-    return view('balance', ['transactions' => $transactions]);
-});
-
-
 Route::get('dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -37,5 +30,6 @@ Route::get('dashboard', function () {
 
 Route::resource('categories', CategoryController::class)->except('show');
 Route::resource('accounts', AccountController::class)->except('show');
+Route::resource('transactions', TransactionController::class)->except('show');
 
 require __DIR__.'/auth.php';
