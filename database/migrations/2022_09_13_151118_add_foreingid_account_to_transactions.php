@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->text('description');
-            $table->double('amount',8,2);
-            $table->timestamps();
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->foreignId('account_id')
+            ->nullable()
+            ->constrained();
         });
     }
 
@@ -28,6 +27,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::table('transactions', function (Blueprint $table) {
+            $table->dropForeign(['account_id']);
+
+        });
     }
 };

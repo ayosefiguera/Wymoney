@@ -17,16 +17,9 @@ use App\Http\Controllers\TransactionController;
 |
 */
 
-
-Route::get('/', function(){
+Route::get('/', function () {
     return view('home');
-});
-
-
-Route::get('dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
+})->middleware(['auth'])->name('home');
 
 Route::resource('categories', CategoryController::class)->except('show');
 Route::resource('accounts', AccountController::class)->except('show');

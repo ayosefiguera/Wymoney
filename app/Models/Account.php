@@ -14,4 +14,9 @@ class Account extends Model
         'iban',
         'is_active'
     ];
+
+
+    protected function transactions(){
+        return $this->hasMany(Transaction::class, 'account_id');
+    }
 }

@@ -16,6 +16,9 @@
                         <tr class="border-b boder-gray-200 text-sm">
                             <td class="px-6 py-4">
                                 {{$transaction->description}}
+                                <div class="flex justify-end">
+                                    <a class="text-xs text-gray-300 bg-gray-500 py-1 px-2 rounded-full" href="#">{{$transaction->category->name}}</a>
+                                </div>
                             </td>
                             <td class="px-6 py-4">
                                 @if ($transaction->amount > 0)
@@ -26,6 +29,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 {{$transaction->created_at}}
+
                             </td>
                             <td class="px-6 py-4"><a href="{{route('transactions.edit', $transaction)}}" class="bg-blue-600 rounded-full px-4 py-2">Edit</a></td>
                             <td class="px-6 py-4">
@@ -41,6 +45,11 @@
                                     onclick="return confirm('want to delete?')"
                                     >
                                 </form>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span>IBAN:{{$transaction->account->iban}}</span>
+                                <span>Category:{{$transaction->category->name}}</span>
+
                             </td>
                         </tr>
                         

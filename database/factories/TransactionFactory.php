@@ -17,8 +17,10 @@ class TransactionFactory extends Factory
     public function definition()
     {
         return [
+            'category_id' => random_int(1,3),
             'description' => fake()->text(),
             'amount' => random_int(-6000,6000),
+            'account_id' => 1,
         ];
     }
 }

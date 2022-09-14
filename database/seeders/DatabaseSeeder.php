@@ -15,12 +15,24 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory()->create();
-        \App\Models\Category::factory(5)->create();
-        \App\Models\Transaction::factory(15)->create();
         \App\Models\Account::factory()->create([
             'name' => 'Main',
             'iban' => 'ES0060000000000001',
             'is_active' => true
         ]);
+        \App\Models\Category::create(
+            ['name' => 'need',
+            'description' => 'need']
+        );
+        \App\Models\Category::create(
+            ['name' => 'wants',
+            'description' => 'wants']
+        );
+        \App\Models\Category::create(
+            ['name' => 'culture',
+            'description' => 'culture']
+        );
+        
+        \App\Models\Transaction::factory(15)->create();
     }
 }
