@@ -18,8 +18,8 @@ class TransactionFactory extends Factory
     {
         return [
             'category_id' => random_int(1,3),
-            'description' => fake()->text(),
-            'amount' => random_int(-6000,6000),
+            'description' => fake()->sentence(),
+            'amount' => rand(0, 10000) / 100,
             'account_id' => 1,
         ];
     }

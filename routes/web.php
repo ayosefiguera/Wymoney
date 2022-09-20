@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\TransactionController;
 
 /*
@@ -16,10 +17,15 @@ use App\Http\Controllers\TransactionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/**/
+Route::controller(PagesController::class)->group(function(){
+    Route::get('/', 'home')->name('home')->middleware(['auth']);
+});
 
+/*
 Route::get('/', function () {
     return view('home');
-})->middleware(['auth'])->name('home');
+})->middleware(['auth'])->name('home');*/
 
 Route::resource('categories', CategoryController::class)->except('show');
 Route::resource('accounts', AccountController::class)->except('show');

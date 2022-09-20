@@ -18,6 +18,19 @@ class DatabaseSeeder extends Seeder
         \App\Models\Account::factory()->create([
             'name' => 'Main',
             'iban' => 'ES0060000000000001',
+            'balance' => 3200.25,
+            'is_active' => true
+        ]);
+        \App\Models\Account::factory()->create([
+            'name' => 'PiggyBank',
+            'iban' => 'ES0060000000000002',
+            'balance' => 1200.50,
+            'is_active' => true
+        ]);
+        \App\Models\Account::factory()->create([
+            'name' => 'Goals',
+            'iban' => 'ES0060000000000003',
+            'balance' => 6500.00,
             'is_active' => true
         ]);
         \App\Models\Category::create(
